@@ -1,0 +1,193 @@
+@font-face {
+font-family: f-prim;
+src: url("./fonts/fontfile-744.ttf") format(truetype);
+}
+@font-face {
+font-family: body-font;
+src: url("./fonts/fontfile-895.ttf") format(truetype);
+}
+
+html, body {
+-webkit-font-size-adjust:100%;
+-moz-font-size-adjust:100%;
+font-size-adjust:100%;
+}
+
+body, body * {
+box-sizing:border-box;
+}
+body {
+margin:0;
+padding:0;
+line-height:1.8;
+font-family:body-font;
+color:#333;
+}
+
+.text-center {
+text-align:center;
+}
+
+header,nav {
+margin:0rem;
+}
+
+.pad-t {
+padding-top:2rem;
+}
+.spc-r {
+margin-right:1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+font-weight:normal;
+}
+
+.bordered {
+border:solid 1px #ddd;
+}
+
+.page-header {
+background:#222;
+padding:7rem 0;
+color:#fff;
+}
+
+
+.wspace {
+display:block;
+margin:8rem 0;
+}
+
+.font-primary {
+font-family:f-prim;
+line-height:1.3;
+}
+
+.title {
+margin:0 0 1.5rem;
+color:#555;
+font-weight:bold;
+}
+.title-xl {
+font-size:2.4rem;
+}
+
+figure {
+margin:0;
+padding:0;
+}
+
+.illus {
+margin:4rem 0;
+border-radius:5px;
+padding:2rem;
+border:solid 1px #ddd;
+box-shadow:0 5px 15px #ddd;
+color:#666;
+}
+
+button, a {
+text-decoration:none;
+font-size:inherit;
+}
+
+.btn {
+padding:0.9rem 1.6rem;
+border-radius:4px;
+}
+
+.btn-primary {
+background:#4545ff;
+color:#fff;
+}
+.btn-sm {
+padding:0.7rem 0.9rem;
+font-size:0.9rem;
+}
+.link {
+margin:0.5rem 0;
+}
+.link-primary {
+color:#4545ff;
+} 
+.bg-primary {
+background:#4545ff;
+color:#fff;
+}
+.bg-dark {
+background:#333;
+color:#fff;
+}
+.code-monospace {
+font-family:monospace;
+font-weight:bold;
+}
+.list {
+display:block;
+margin:1.7rem 0;
+padding:0;
+list-style:none;
+}
+.list-inner {
+padding-left:1.8rem;
+}
+.main-meth {
+margin:2rem 0;
+padding:1.4rem;
+border:solid 1px #ddd;
+border-radius:4px;
+box-shadow:0 5px 3rem #ddd;
+}
+.fx-detail {
+padding:1.3rem;
+margin:1.9rem 0;
+background:#f4f4f4;
+border:solid 1px #ddd;
+border-radius:4px;
+}
+.note-imp {
+margin:1rem 0;
+background:#e0eaff;
+color:#3d3f45;
+padding:1.5rem;
+border-radius:4px;
+}
+.bold {
+font-weight:bold;
+}
+.footer {
+padding:3rem 0;
+}
+.navbrand img {
+width:100%;
+}
+@media (min-width:1280px) {
+.brand {
+width:12%;
+}
+.navbrand {
+width:8%;
+}
+
+}
+
+@media (min-width:768px) and (max-width:1279px) {
+.brand {
+width:17%;
+}
+.navbrand {
+width:10%;
+}
+}
+
+@media (max-width:767px) {
+body {
+font-size:0.83rem;
+}
+.brand {
+width:25%;
+}
+.navbrand {
+width:15%;
+}
+}
