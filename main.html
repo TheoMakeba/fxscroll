@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+<link rel="stylesheet" href="./assets/codesnip/codesnip.min.css">
+<link rel="stylesheet" href="./src/dist/fxscroll.min.css">
+<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="./assets/css/fastcss/grid.css">
+<link rel="stylesheet" href="./assets/css/fastcss/text.css">
+<title>Fxscroll : Documentation</title>
+</head>
+<body class="" >
+	<div class="container" >
+		<div class="line" >
+			<div class="lg-col-8 lg-ofs-2 md-col-10 md-ofs-1 sm-col-auto pad-t" >
+				<div class="navbar" >
+					<figure class="navbrand" >
+						<img src="./assets/img/im-4.png" class="" >
+					</figure>
+				</div>
+				<h1 class="title font-primary ttb-mov" >
+					fxscroll : Documentation
+				</h1>
+				<div>
+					version de la libraire : 1.0.0 / 10-2024<br><br>
+					<a href="./src/fxscroll.1.0.0.zip" class="btn btn-sm btn-primary spc-r" >
+						Télécharger la librairie 
+					</a> 
+					<a href="./index.html" class="btn btn-sm bg-dark"  >Rentrer à la présentation</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wspace" ></div>
+		
+		<div class="line" >
+			<div class="lg-col-8 lg-ofs-2 md-col-10 md-ofs-1 sm-col-auto rtl-mov ttb-mov" >
+				<h2 class="title font-primary" >
+					Mise en place
+				</h2>
+				<div>
+					Pour utliser fxscroll, vous devez premièrement commencer 
+					par télécharger la libraire et inclure  les fichier CSS et JavaScript 
+					dans votre document HTML de manière traditionnelle.
+					
+					<div class="csnip ttb-mov"  csnip-lang="html">
+						<div class="csnip-body" >
+							// Import du fichier CSS et JavaScript
+							
+							<link rel="stylesheet" href="chemin-du-fichier/fxscroll.css">
+							
+							<script type="text/javascript" src="chemin-du-fichier/fxscroll.js"></script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wspace" ></div>
+				
+		<div class="line" >
+			<div class="lg-col-8 lg-ofs-2 md-col-10 md-ofs-1 sm-col-auto" >
+				<h2 class="title font-primary rtl-mov" >
+					Utilisation
+				</h2>
+				<div>
+					Pour utiliser fxscroll vous devez d'anore créer une instance 
+					de fxscroll puis dde faire usage des méthodes de cette instance 
+					pour cibler des éléments et spécifier certains paramètres d'animation.
+					
+					<div class="csnip scin-mov" csnip-lang="js" >
+						<div class="csnip-body" >
+							// Création de l'objet fxscroll 
+							
+							let fxscrollInstance = new fxscroll();
+						</div>
+					</div>
+					
+					L'objet crée possèdenune seule méthode avec laquelle il sera possible de 
+					cibler et de de spécifier les parmètre d'animation.<br><br>
+					
+					Cette méthode est : <span class="code-monospace" >createContext()</span> 
+					
+					<div class="csnip scin-mov" csnip-lang="js" >
+						<div class="csnip-body" >
+							// createContext
+							
+							let fxscrollInstance = new fxscroll();
+							
+							fxscrollInstance.createContext({
+								'context' : [
+									{
+										target : ["#myId", document.getElementById("myId2"), "[class='myClass']"],
+										options : {
+											ratio : 0.2 // Spécifie le ratio de visibilité des éléments ciblés : comprit entre 0 et 1
+											flow : "r-t" // Un mot clé de l'effet d'animation
+											clear : true|false // Un booléen qui spécifie si l'élement ciblé doit être masqué si il n'est plus visible
+										}
+									}
+								]
+							})
+						</div>
+					</div>
+					
+					Cette méthode prend en argument un objet JavaScript 
+					qui doit necessairement posséder une propriété nommée : 
+					<span class="code-monospace" > context </span>.<br><br>
+					Cette propriété doit avoir pour valeur un tableau, ce dernier doit 
+					pouvoir contenir des objets JavaScript qui répresentent un ensemble d'éléments 
+					à cibler ainsi que leurs options spécifiques.<br><br>
+					
+					Les objets JavaScript contenu dans le tabeleau du champ <span class="code-monospace" >context</span> 
+					doivent spécifier les champs ci-après : <br><br>
+					
+					<ul class="list" >
+						<li class="main-meth rtl-mov" >
+							<h3 class="code-monospace title" >1. target</h3>
+							<p>
+								Cette propriété est un tableau qui contient soit des sélécteurs sous forme de 
+								chaîne de caractère, soit des noeud du DOM.<br>
+								C'est sur ces éléments que porterons les effets d'animations qui seront spécifiés 
+								par le champ suivant
+							</p>
+						</li>
+						<li class="main-meth" >
+							<h3 class="code-monospace title" >2. options</h3>
+							<div>
+								Cette propriété est un objet JavaScript dont on doit spécifier les 
+								propriétés ci-après : 
+								<ul class="list list-inner" >
+									<li class="rtl-mov" >
+										<h3 class="code-monospace" >A. ratio </h3>
+										<p>
+											Cette propriété est un entier flottant qui spécifie le ratio de visibilité, c'est à 
+											dire un entier compris entre 0 et 1 qui indique la hauteur minimum 
+											que doit avoir un objet par rapport au bas de l'écran pour qu'une animation 
+											d'apparition soit déclanchée.
+										</p>
+									</li>
+									<li class="" >
+										<h3 class="code-monospace" >B. flow </h3>
+										<p>
+											Cette propriété est une chaîne de caractère qui spécifie le type d'animation à appliquer.<br>
+											Il faudrait savoir qu'il exite 5 effets de base disponible : <br><br>
+											
+											<div class="fx-detail rtl-mov" >
+												<h3 class="title" > t-b </h3>
+												Pour <b>top-bottom</b>, il applique, sur un élément ciblé, un effet de glissement doux 
+												de haut vers le bas
+											</div>
+											<div class="fx-detail rtl-mov" >
+												<h3 class="title" > b-t </h3>
+												Pour <b>bottom-top</b>, il applique, sur un élément ciblé, un effet de glissement doux 
+												du bas vers le haut
+											</div>
+											<div class="fx-detail rtl-mov" >
+												<h3 class="title" > l-r </h3>
+												Pour <b>left-right</b>, il applique, sur un élément ciblé, un effet de glissement doux 
+												de la gauche vers la droite
+											</div>
+											<div class="fx-detail rtl-mov" >
+												<h3 class="title" > r-l </h3>
+												Pour <b>top to bottom</b>, il applique, sur un élément ciblé, un effet de glissement doux 
+												de la droite vers la gauche
+											</div>
+											<div class="fx-detail rtl-mov" >
+												<h3 class="title" > scale-in </h3>
+												Pour <b>top to bottom</b>, il applique, sur un élément ciblé, un effet de zoom sortant
+												donnant la sensation q'un élément devient progressivement grand 
+												jusqu'à atteindre sa taille normale.
+											</div>
+										</p>
+									</li>
+									<li>
+										<h3 class="code-monospace title rtl-mov" >C. clear</h3>
+										<p>
+											Cette propriété est un booléen qui spécifie si oui ou non un élément 
+											douit être masqué de nouveau s'il nest plus visible dans la fenêtre du 
+											navigateur
+										</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					
+					<div class="note-imp ltr-mov" >
+						Il faut aussi savoir qu'il est impératif d'appeller la 
+						méthode <span class="code-monospace bold" >init()</span> sur 
+						l'instace de fxscroll pour commencer le traitement, sinon rien 
+						ne se passera visuellement.
+					</div>
+				</div>
+			</div>
+		</div>
+				
+	</div>
+	
+	<div class="wspace" ></div>
+	
+	<div class="line" >
+		<div class="lg-col-8 lg-ofs-2 md-col-10 md-ofs-1 sm-col-auto" >
+			<div class="csnip scin-mov" csnip-lang="js">
+				<div class="csnip-body" >
+					var ref = new fxscroll();
+					ref.createContext({
+						"context" : [
+							target : ['div[id="myId"]'],
+							options : {
+								ratio : 0.3,
+								flow : "r-l",
+								clear : true
+							},
+							target : ['.myClassName'],
+							options : {
+								ratio : 0.1,
+								flow : "scale-in",
+								clear : false
+							},
+							target : ['#idRoot', document.getElementById("myId")],
+							options : {
+								ratio : 0.8,
+								flow : "b-t",
+								clear : true
+							}
+						]
+					});
+					
+					ref.init(); // pour initier les effets
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wspace" ></div>
+	
+	<div class="line" >
+		<div class="lg-col-8 lg-ofs-2 md-col-10 md-ofs-1 sm-col-auto ltr-mov" >
+			<h2 class="title font-primary" >Quelques precautions à prendre</h2>
+			<div>
+				Etant donné que le coeur du calcul est basé sur la hauteur 
+				des éléments ciblés, il faudrait prendre soin de ne pas cibler 
+				les éléments dont la hauteur est trop grande que la celle du navigateur.
+				<br><br>
+				Il est aussi recommandé de ne pas cibler deux fois les mêmes éléments,
+				ceci pourrait avoir des efeets indesirables.			
+			</div>
+		</div>
+	</div>
+	
+	<div class="wspace" ></div>	
+	
+	<footer class="footer bg-dark" >
+		<div class="line" >
+			<div class="lg-col-6 lg-ofs-2 md-col-10 md-ofs-1 sm-col-auto" >
+				<figure class="navbrand" >
+					<img src="./assets/img/im-4.png" class="" >
+				</figure>
+				fxscroll 2024<br>
+				Theo Makeba
+			</div>
+		</div>
+	</footer>
+<script type="text/javascript" src="./src/dist/fxscroll.min.js"></script>
+<script type="text/javascript" src="./assets/codesnip/codesnip.min.js"></script>
+<script type="text/javascript" src="./assets/JS/csnip.js"></script>
+<script type="text/javascript" src="./assets/JS/main.js"></script>
+</body>
+</html>
